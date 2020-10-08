@@ -2,13 +2,22 @@
 
 echo "Welcome to employeeWage Computation"
 
-a=$( expr $RANDOM / 10 )
-b=$( expr $a % 2 )
+Is_Full_Time=1
 
-	if [ $b -eq 1 ]
+Emp_Rate_Per_Hour=20
+
+a=$( expr $RANDOM % 2 )
+
+	if [ $a -eq $Is_Full_Time ]
 	then
-		echo "employee is present"
-	elif [ $b -eq 0 ]
+		emphrs=8
+
+		Total_Salary=$(( $Emp_Rate_Per_Hour * $emphrs ));
+
+		echo "Daily Wage of Employee is $Total_Salary"
+
+	elif [ $a -eq 0 ]
 	then
 		echo "employee is absent"
+
 	fi
