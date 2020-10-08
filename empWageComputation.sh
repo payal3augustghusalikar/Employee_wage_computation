@@ -10,5 +10,5 @@ b=$( expr $a % 2 )
 		echo "employee is present"
 	elif [ $b -eq 0 ]
 	then
-		echo "empoyee is absent"
+		echo "employee is absent"
 	fi
