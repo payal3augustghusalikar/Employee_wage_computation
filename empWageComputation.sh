@@ -11,11 +11,11 @@ empcheck=$( expr $RANDOM % 3 )
 case $empcheck in
 
 	$Is_Full_Time)
-		emphrs=10
+		emphrs=8
 			;;
 
 	$Is_Part_Time)
-		emphrs=8
+		emphrs=4
 			;;
 
 		*)
