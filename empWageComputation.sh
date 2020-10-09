@@ -1,7 +1,8 @@
 #! /bin/bash -x
 
 echo "Welcome to employeeWage Computation"
-
+echo " "
+echo "daily wage of employee is:"
 Is_Full_Time=2
 Is_Part_Time=1
 Total_Salary=0
@@ -44,8 +45,9 @@ do
 		Total_Salary=$(( $Salary + $Total_Salary ))
 
 		Total_Emp_Hrs=$(( $Total_Emp_Hrs + $emphrs ))
+
+	echo " Day $TotalWorkingDays ==> $Salary"
+
 done
 
 	echo "total Wage of Employee is $Total_Salary"
-
-	echo "Total Employee hours is $Total_Emp_Hrs"
