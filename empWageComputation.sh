@@ -10,10 +10,12 @@ Num_Working_Days=20
 Max_Month_Hrs=100
 Total_Emp_Hrs=0
 
-while [ $Total_Emp_Hrs -le $Max_Month_Hrs ]
-do
+totalworkingdays=0
 
-		empcheck=$( expr $RANDOM % 3 )
+function getworkinghour
+{
+		local emphrs=0;
+
 
 			case $empcheck in
 
@@ -28,6 +30,14 @@ do
 			*)
 				emphrs=0
 			esac
+echo $emphrs
+}
+while [[ $Total_Emp_Hrs -lt $Max_Month_Hrs && $totalworkingdays -lt $Num_Working_Days ]]
+do
+		((TotalWorkingDays++))
+      empcheck=$( expr $RANDOM % 3 )
+
+		emphrs=$( getworkinghour $empcheck )
 
 		Salary=$(( $Emp_Rate_Per_Hour * $emphrs ))
 
@@ -38,4 +48,4 @@ done
 
 	echo "Daily Wage of Employee is $Total_Salary"
 
-
+	echo "Total Employee hours is $Total_Emp_Hrs"
