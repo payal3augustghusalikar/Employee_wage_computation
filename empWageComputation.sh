@@ -7,29 +7,35 @@ Is_Part_Time=1
 Total_Salary=0
 Emp_Rate_Per_Hour=20
 Num_Working_Days=20
+Max_Month_Hrs=100
+Total_Emp_Hrs=0
 
-for (( day=1; day<=$Num_Working_Days; day++ ))
+while [ $Total_Emp_Hrs -le $Max_Month_Hrs ]
 do
-	empcheck=$( expr $RANDOM % 3 )
 
-		case $empcheck in
+		empcheck=$( expr $RANDOM % 3 )
 
-		$Is_Full_Time)
-			emphrs=8
-				;;
+			case $empcheck in
 
-		$Is_Part_Time)
-			emphrs=4
-				;;
+			$Is_Full_Time)
+				emphrs=8
+					;;
 
-		*)
-			emphrs=0
-		esac
+			$Is_Part_Time)
+				emphrs=4
+					;;
+
+			*)
+				emphrs=0
+			esac
 
 		Salary=$(( $Emp_Rate_Per_Hour * $emphrs ))
 
 		Total_Salary=$(( $Salary + $Total_Salary ))
+
+		Total_Emp_Hrs=$(( $Total_Emp_Hrs + $emphrs ))
 done
 
 	echo "Daily Wage of Employee is $Total_Salary"
+
 
