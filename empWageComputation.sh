@@ -44,8 +44,11 @@ do
 		Total_Salary=$(( $Salary + $Total_Salary ))
 
 		Total_Emp_Hrs=$(( $Total_Emp_Hrs + $emphrs ))
+
+	echo " Day $TotalWorkingDays ==>  "
+	echo "Daily wage of employee is $Salary"
 done
 
-	echo "Daily Wage of Employee is $Total_Salary"
+	echo "Total Wage of Employee is $Total_Salary"
 
-	echo "Total Employee hours is $Total_Emp_Hrs"
+
